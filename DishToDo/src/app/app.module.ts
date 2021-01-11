@@ -5,7 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HttpHeaders } from '@angular/common/http';
-//import { AddUserComponent } from './components/users/add-user/add-user.component';
+import { AddUserComponent } from './components/users/add-user/add-user.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { MatButtonModule } from  '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -18,7 +19,6 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from  '@angular/material/toolbar';
 import { ViewUsersComponent } from './components/users/view-users/view-users.component';
-import { AddUserComponent } from './components/users/add-user/add-user.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +30,8 @@ import { AddUserComponent } from './components/users/add-user/add-user.component
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatButtonModule,
     MatIconModule,
     MatButtonModule,
