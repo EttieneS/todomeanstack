@@ -29,20 +29,16 @@ export class AddUserComponent implements OnInit {
 
   addUser(user) {
     const data =  {
-      username: user.username
+      username: user.value.username
     }
-    console.log("bonobo");
-    console.log(data + "data object");
-    console.log(data.username + " data");
-    console.log(user + " user");
-    // this.userService.create(data)
-    //   .subscribe(
-    //     response => {
-    //       console.log(response);
-    //     },
-    //     error => {
-    //       console.log(error);
-    //     });
+    this.userService.create(data)
+      .subscribe(
+        response => {
+          console.log(response);
+        },
+        error => {
+          console.log(error);
+        });
   }
 
 }

@@ -22,8 +22,10 @@ export class ViewUsersComponent implements OnInit {
   currentIndex = -1
   username = '';
 
-  displayedColumns = ["username"];
-  headElements = ['username'];
+  displayedColumns = ["username",
+    "delete"];
+  // headElements = ['username',
+  //   "delete"];
 
   dataSource: MatTableDataSource<User>;
 
@@ -96,13 +98,14 @@ export class ViewUsersComponent implements OnInit {
   //
 
   //
-  // deleteUser(userid){
-  //   this.userService.delete(userid).subscribe((data)=>{
-  //     alert("successfully deleted");
-  //   });
-  //   location.reload();
-  //   return false;
-  // }
+  deleteUser(userid){
+    console.log(userid);
+    // this.userService.delete(userid).subscribe((data)=>{
+    //   alert("successfully deleted");
+    // });
+    // location.reload();
+    // return false;
+  }
   //
   // fileUpload() {
   //   this.router.navigate(['/files']);

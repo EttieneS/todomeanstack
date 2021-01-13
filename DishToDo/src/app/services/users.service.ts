@@ -29,7 +29,7 @@ export class UserService {
   }
 
   create(data): Observable<any> {
-    return this.http.post(baseUrl + '/create', data);
+    return this.http.post(baseUrl + 'users/create', data);
   }
 
   // getAll() {
@@ -68,10 +68,10 @@ export class UserService {
   //   return promise;
   // }
 
-  // delete(id): Observable<any> {
-  //   // var url = baseUrl + '/delete/' + id;
-  //   // alert(url);
-  //
-  //   return this.http.delete(baseUrl + '/delete/' + id, { headers: this.headers });
-  // }
+  delete(id): Observable<any> {
+    // var url = baseUrl + '/delete/' + id;
+    // alert(url);
+
+    return this.http.delete(baseUrl + 'users/delete/' + id, { headers: this.headers });
+  }
 }
