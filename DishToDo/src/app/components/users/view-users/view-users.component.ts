@@ -23,9 +23,7 @@ export class ViewUsersComponent implements OnInit {
   username = '';
 
   displayedColumns = ["username",
-    "delete"];
-  // headElements = ['username',
-  //   "delete"];
+    "edit", "delete"];
 
   dataSource: MatTableDataSource<User>;
 
@@ -38,7 +36,6 @@ export class ViewUsersComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log("init");
     this.dataSource = new MatTableDataSource();
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
@@ -66,5 +63,9 @@ export class ViewUsersComponent implements OnInit {
     });
     location.reload();
     //return false;
+  }
+
+  editUser(userid){
+    console.log("edit user bonobo");
   }
 }

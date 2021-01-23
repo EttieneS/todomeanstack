@@ -21,6 +21,8 @@ export class AddUserComponent implements OnInit {
     this.userdetailsForm = new FormGroup({
       username: new FormControl('', [Validators.maxLength(60)])
     });
+
+
   }
 
   addUser(user) {
@@ -36,5 +38,11 @@ export class AddUserComponent implements OnInit {
         error => {
           console.log(error);
         });
+  }
+
+  getUser(id): void {
+    console.log(id);
+    // this.userService.get(id)
+    //   .
   }
 }
