@@ -59,55 +59,12 @@ export class ViewUsersComponent implements OnInit {
   addUser() {
     this.router.navigate(['/users/add']);
   }
-  // retrieveUsers(): void {
-  //   this.userService.getAll()
-  //     .subscribe(
-  //       data => {
-  //         this.users = data;
-  //         this.dataSource.data = data;
-  //       }
-  //     )
-  // }
 
-  // retrieveUsers() {
-  //   this.userService.getAll().pipe(
-  //     mergeMap((users: User[]) => {
-  //       if (users && users.length){
-  //         console.log("users");
-  //         console.log(users);
-  //       }
-  //       console.log("bonobo");
-  //       return of([]);
-  //     })
-  //   ).subscribe((users: User[]) => {
-  //     console.log(users);
-  //     for(user of users){
-  //
-  //       console.log(users.name);
-  //     }
-  //   });
-  // }
-
-  // applyFilter(filterValue: string) {
-  //   this.dataSource.filter = filterValue.trim().toLowerCase();
-  //
-  //   if (this.dataSource.paginator) {
-  //     this.dataSource.paginator.firstPage();
-  //   }
-  // }
-  //
-
-  //
   deleteUser(userid){
-    console.log(userid);
-    // this.userService.delete(userid).subscribe((data)=>{
-    //   alert("successfully deleted");
-    // });
-    // location.reload();
-    // return false;
+    this.userService.delete(userid).subscribe((data)=>{
+      alert("successfully deleted");
+    });
+    location.reload();
+    //return false;
   }
-  //
-  // fileUpload() {
-  //   this.router.navigate(['/files']);
-  // }
 }

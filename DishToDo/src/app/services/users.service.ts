@@ -69,6 +69,6 @@ export class UserService {
   // }
 
   delete(id): Observable<any> {
-    return this.http.delete(baseUrl + 'users/delete/' + id, { headers: this.headers });
+    return this.http.delete(baseUrl + 'users/delete/_id=' + id, { headers: this.headers });
   }
 }
