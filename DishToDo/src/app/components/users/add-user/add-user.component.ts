@@ -8,10 +8,6 @@ import { UserService } from '../../../services/users.service';
   styleUrls: ['./add-user.component.css']
 })
 export class AddUserComponent implements OnInit {
-  // user = {
-  //   username: ''
-  // }
-
   user = {
     username: ''
   };
@@ -35,10 +31,10 @@ export class AddUserComponent implements OnInit {
       .subscribe(
         response => {
           console.log(response);
+          window.location.href = "";
         },
         error => {
           console.log(error);
         });
   }
-
 }

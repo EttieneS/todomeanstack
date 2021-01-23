@@ -69,9 +69,6 @@ export class UserService {
   // }
 
   delete(id): Observable<any> {
-    // var url = baseUrl + '/delete/' + id;
-    // alert(url);
-
     return this.http.delete(baseUrl + 'users/delete/' + id, { headers: this.headers });
   }
 }
