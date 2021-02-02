@@ -28,7 +28,7 @@ connection.once('open', () => {
 // app.get('/', (req, res) => {
 //   res.send("bonobo");
 // })
-app.use('/', usersRouter);
+app.use('/users', usersRouter);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
