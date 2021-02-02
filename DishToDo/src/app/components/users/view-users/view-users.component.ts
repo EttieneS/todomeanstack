@@ -65,8 +65,8 @@ export class ViewUsersComponent implements OnInit {
     //return false;
   }
 
-  editUser(userid){
+  editUser(id){
     console.log("edit user bonobo");
-    this.router.navigateByUrl('users/edit/' + userid);
+    this.router.navigateByUrl('/users/edit/' + id);
   }
 }

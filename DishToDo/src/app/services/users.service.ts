@@ -28,45 +28,13 @@ export class UserService {
     return this.http.get<User[]>(baseUrl + 'users');
   }
 
+  get(id): Observable<any> {
+    return this.http.get(baseUrl + 'users/get/_id=' + id);
+  }
+
   create(data): Observable<any> {
     return this.http.post(baseUrl + 'users/create', data);
   }
-
-  // getAll() {
-  //   return this.http.get(baseUrl + '/users').pipe(
-  //     map((data: User[]) => {
-  //       return data;
-  //     }), catchError( error => {
-  //       return throwError( 'Something went wrong!' );
-  //     })
-  //    )
-  //  }
-
-
-  // getUsers() {
-  //   const promise = new Promise((resolve, reject) => {
-  //     const apiURL = baseUrl;
-  //     this.http
-  //       .get<User[]>(apiURL)
-  //       .toPromise()
-  //       .then(res => {
-  //         this.data = res.map((res: any) => {
-  //           console.log(res._id);
-  //           return new User(
-  //             res._id,
-  //             res.name
-  //           );
-  //         });
-  //         resolve();
-  //       },
-  //         err => {
-  //           // Error
-  //           reject(err);
-  //         }
-  //       );
-  //   });
-  //   return promise;
-  // }
 
   delete(id): Observable<any> {
     return this.http.delete(baseUrl + 'users/delete/_id=' + id, { headers: this.headers });

@@ -1,0 +1,16 @@
+<div>
+  <form [formGroup]="userdetailsForm" (ngSubmit)="updateUser(userdetailsForm)">
+    <mat-form-field appearance="legacy">
+      <mat-label>User Name</mat-label>
+      <input matInput
+        formControlName="username"
+        id="username"
+        name="username"
+        placeholder="User Name">
+      <mat-hint>Enter the user's name</mat-hint>
+    </mat-form-field>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Add User</button>
+    </mat-card-actions>
+  </form>
+</div>
