@@ -8,12 +8,12 @@ const app = express();
 const usersRouter = require('./routes/user.routes');
 
 require('dotenv').config();
-// require("./routes/user.routes")(app);
+
 // var corsOptions = {
-//   origin: "http://127.0.0.1"
+//   origin: "http://localhost"
 // };
 
-//app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 app.use(cors())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -24,8 +24,11 @@ const connection = mongoose.connection;
 connection.once('open', () => {
   console.log("MongoDB database connection established successfully");
 })
+
+// app.get('/', (req, res) => {
+//   res.send("bonobo");
+// })
 app.use('/', usersRouter);
-// app.get('/', usersRouter);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

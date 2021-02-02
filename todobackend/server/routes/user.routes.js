@@ -1,9 +1,10 @@
-module.exports = user => {
-  const users = require("../controllers/users.controller.js");
+const router = require('express').Router();
+let User = require('../models/user.model');
 
-  var userroute = express();
+router.route('/').get((req, res) => {
+  User.find()
+    .then(users => res.json(users))
+    .catch(err => res.status(400).json('Error: ' + err));
+})
 
-  userroute.use("/", (req, res) => {
-    res.send("Hello world");
-  });
-}
+module.exports = router;
