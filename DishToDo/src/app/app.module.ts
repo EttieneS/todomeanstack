@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { AddUserComponent } from './components/users/add-user/add-user.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-
+import { UserRoutingModule } from './routes/user-routing.module';
 import { MatButtonModule } from  '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from  '@angular/material/icon';
@@ -29,6 +29,7 @@ import { ViewUsersComponent } from './components/users/view-users/view-users.com
   imports: [
     BrowserModule,
     AppRoutingModule,
+    UserRoutingModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,

@@ -5,8 +5,8 @@ import { AddUserComponent } from './components/users/add-user/add-user.component
 
 const routes: Routes = [
   { path: '', redirectTo: 'users', pathMatch: 'full' },
-  { path: 'users', component: ViewUsersComponent },
-  { path: 'users/add', component: AddUserComponent }
+  { path: 'users',
+    loadChildren: () => import('./routes/user-routing.module').then(mod => mod.UserRoutingModule)}
 ];
 
 @NgModule({
