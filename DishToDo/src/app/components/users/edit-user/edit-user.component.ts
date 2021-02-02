@@ -20,6 +20,7 @@ export class EditUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUser(this.route.snapshot.paramMap.get('id'));
+
     this.userdetailsForm = new FormGroup({
       username: new FormControl('', [Validators.maxLength(60)])
     });
@@ -27,7 +28,7 @@ export class EditUserComponent implements OnInit {
 
 
   getUser(id): void {
-    alert('userid ' + id);
+    alert(id);
     this.userService.get(id)
       .subscribe(
         data => {

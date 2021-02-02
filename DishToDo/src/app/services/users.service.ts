@@ -28,7 +28,7 @@ export class UserService {
   }
 
   get(id): Observable<any> {
-    return this.http.get(baseUrl + 'users/get/_id=' + id);
+    return this.http.get(baseUrl + 'users/getbyid/_id=' + id);
   }
 
   create(data): Observable<any> {
